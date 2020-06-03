@@ -78,14 +78,12 @@ public class ThirteenThirtySevenLinkGetter implements LinkGetter {
        
         //WebElement result = driver.findElement(By.tagName("td"));
         WebElement result = null;
-        
-        
+         
         List<WebElement> anchors = driver.findElements(By.tagName("a"));
         Iterator<WebElement> i = anchors.iterator();
 
         List<String> torrentLinks = new ArrayList<String>(10);
 
-        
         while(i.hasNext()) {
             WebElement anchor = i.next();
             if (anchor.getAttribute("href").toString().contains("1337x.to/torrent")) {
@@ -110,17 +108,15 @@ public class ThirteenThirtySevenLinkGetter implements LinkGetter {
                 if (anchor.getAttribute("href").toString().contains("magnet")) {
                     magnetURIs.add(anchor.getAttribute("href"));
                 	//System.out.println(anchor.getAttribute("href"));
-                    
                 }
         	}
         }
         
         this.destFile = "D:\\ScheduledDownloads\\" + sb.toString();
         this.outputFile = new File(destFile);
+        
         FileWriter fw = null;
-		
 		fw = new FileWriter(outputFile);
-		
         for (String s: magnetURIs) {
         	System.out.println(s);
         	if (s.contains("1080p")) {
@@ -130,12 +126,9 @@ public class ThirteenThirtySevenLinkGetter implements LinkGetter {
         fw.close();
 
         System.out.println(magnetURIs);
-      
-        
-        
+
         driver.close();
-        
-		
+
 		return true;
 	}
 	
