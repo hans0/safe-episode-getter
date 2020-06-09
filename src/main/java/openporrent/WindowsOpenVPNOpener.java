@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public class WindowsOpenVPNOpener {
+public class WindowsOpenVPNOpener implements VPNOpener{
 
 	Robot robot;
 	Process proxyProcess;
@@ -30,7 +30,6 @@ public class WindowsOpenVPNOpener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public boolean connectToProxy() throws InterruptedException {

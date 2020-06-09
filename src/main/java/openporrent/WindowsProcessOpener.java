@@ -10,8 +10,7 @@ import java.util.Arrays;
 public class WindowsProcessOpener {
 
 	// rick
-	//	"magnet:?xt=urn:btih:F0C3C299FD40A6E8AA7CBD07D0E1101CE373BB23&dn=Rick.and.Morty.S04E06.Never.Ricking.Morty.1080p.AMZN.WEB-DL.DD%2B5.1.H.264-CtrlHD%5BTGx%5D+%E2%AD%90&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.iamhansen.xyz%3A2000%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.moeking.me%3A6969%2Fannounce&tr=udp%3A%2F%2Fipv4.tracker.harry.lu%3A80%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce\r\n"
-
+	
 	
 	public static void main(String[] args) throws IOException {
 		// getting current IP address
@@ -67,11 +66,15 @@ public class WindowsProcessOpener {
 				
 				
 				// ATTEMPT 4
-				
+				// program location
 				"C:\\Users\\Hans\\Downloads\\aria2-1.35.0-win-64bit-build1\\aria2c.exe",
+				// torrent as argument, magnet can also go here
 				"C:\\Users\\Hans\\Downloads\\Doom_Manual_Final_Doom_archive.torrent",
+				// target directory
 				"--dir=C:\\Users\\Hans\\Downloads\\ariatest",
+				// I think this means seed for 1 second or minute
 				"--seed-time=1",
+				// I was testing this, so allowing it to be overwritten is important
 				"--allow-overwrite=true"
 				
 				

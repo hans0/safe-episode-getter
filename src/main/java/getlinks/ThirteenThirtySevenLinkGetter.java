@@ -17,7 +17,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ThirteenThirtySevenLinkGetter implements LinkGetter {
 
-
 	private String destFile;
 	private File outputFile;
 
@@ -37,8 +36,6 @@ public class ThirteenThirtySevenLinkGetter implements LinkGetter {
 		this.outputFile = outputFile;
 	}
 
-
-	
 	public ThirteenThirtySevenLinkGetter() {
 		this.destFile = "D:\\ScheduledDownloads";
 	}
@@ -47,7 +44,6 @@ public class ThirteenThirtySevenLinkGetter implements LinkGetter {
 		String [] destFilename = query.split("\\s+");
 		StringBuilder sb = new StringBuilder();
 		for (String s: destFilename) {
-			//query += s;
 			sb.append(s);
 		}
 		// query = DateTimeFormatter.ofPattern("uuuuMMdd_HHmm").toString() + query;
@@ -57,21 +53,18 @@ public class ThirteenThirtySevenLinkGetter implements LinkGetter {
 		sb.append(".txt");
 		System.out.println(sb.toString());
 		
-		
+		// WINDOWS
+		// need to do something different here for Linux
 		System.setProperty("webdriver.chrome.driver","C:\\gecko\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
-		
 		String baseUrl = "https://1337x.to/";
         
-        
-        // launch Fire fox and direct it to the Base URL
+        // launch Firefox and direct it to the Base URL
         driver.get(baseUrl);
-
        
         WebElement searchBox = driver.findElement(By.name("search"));
         
-        //searchBox.sendKeys("star wars clone wars s07e12");
         searchBox.sendKeys(query);
 
         searchBox.sendKeys(Keys.ENTER);
@@ -88,8 +81,6 @@ public class ThirteenThirtySevenLinkGetter implements LinkGetter {
             WebElement anchor = i.next();
             if (anchor.getAttribute("href").toString().contains("1337x.to/torrent")) {
                 torrentLinks.add(anchor.getAttribute("href"));
-            	//System.out.println(anchor.getAttribute("href"));
-                
             }
         }
         
@@ -112,6 +103,8 @@ public class ThirteenThirtySevenLinkGetter implements LinkGetter {
         	}
         }
         
+        // WINDOWS
+		// need to do something different here for Linux
         this.destFile = "D:\\ScheduledDownloads\\" + sb.toString();
         this.outputFile = new File(destFile);
         

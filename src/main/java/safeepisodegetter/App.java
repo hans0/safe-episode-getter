@@ -58,6 +58,7 @@ public class App {
 		}
 		*/
 		lg.getLinks(site);
+		// NEEDS WORK
 		// 4. Choose best torrent (1080p first, then choose highest number of seeders)
 		File magnetFile = lg.getOutputFile();
 		
@@ -73,7 +74,7 @@ public class App {
 		
 		sc1.close();
 		
-		// 4. Download torrent
+		// 5. Download torrent
 		
 		
 		
