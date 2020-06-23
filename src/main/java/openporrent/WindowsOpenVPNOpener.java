@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public class WindowsOpenVPNOpener implements VPNOpener{
+public class WindowsOpenVPNOpener extends VPNOpener{
 
 	Robot robot;
 	Process proxyProcess;
