@@ -9,4 +9,5 @@ public abstract class VPNOpener {
 	Process proxyProcess;
 	String[] proxyPath;
 	public abstract boolean connectToProxy() throws InterruptedException;
+	
 }
